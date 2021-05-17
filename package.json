@@ -1,4 +1,4 @@
-{
+{"homepage":"http://pranavaccion.github.io/demo",
   "name": "twilio-video-app-react",
   "version": "0.3.1",
   "private": true,
@@ -56,6 +56,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "gh-pages": "^3.1.0",
     "isomorphic-fetch": "^2.2.1",
     "jest-junit": "^9.0.0",
     "mocha": "^6.2.2",
@@ -85,7 +86,9 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
     "cypress:ci": "cross-env CYPRESS_baseUrl=http://localhost:8081 start-server-and-test server http://localhost:8081 cypress:run",
-    "deploy:twilio-cli": "cross-env REACT_APP_SET_AUTH=passcode npm run build && twilio rtc:apps:video:deploy --authentication=passcode --app-directory ./build"
+    "deploy:twilio-cli": "cross-env REACT_APP_SET_AUTH=passcode npm run build && twilio rtc:apps:video:deploy --authentication=passcode --app-directory ./build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app",
